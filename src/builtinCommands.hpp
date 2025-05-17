@@ -24,6 +24,12 @@ class BuiltinCommands {
     // Function to handle the 'type; command: print how a command would be interpreted if used
     void type(const std::vector<std::string>& args);
 
+    // Function to handle the 'pwd' command: print the current working directory
+    void pwd(const std::vector<std::string>& args);
+
+    // Function to handle the 'cd' command: print the current working directory
+    void cd(const std::vector<std::string>& args);
+
   public:
     // constructor
     BuiltinCommands(std::vector<std::string> executableDirectories) {
@@ -34,6 +40,8 @@ class BuiltinCommands {
         _commandMap["exit"] = &BuiltinCommands::exit;
         _commandMap["echo"] = &BuiltinCommands::echo;
         _commandMap["type"] = &BuiltinCommands::type;
+        _commandMap["pwd"] = &BuiltinCommands::pwd;
+        _commandMap["cd"] = &BuiltinCommands::cd;
     }
 
     // Check if a command is a builtin command
